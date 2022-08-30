@@ -5,6 +5,10 @@ import Icon1 from "../assets/Icon-1.svg"
 import Icon2 from "../assets/Icon-2.svg"
 import Icon3 from "../assets/Icon-3.svg"
 import Icon4 from "../assets/Icon-4.svg"
+import People from "../assets/People.jpg"
+import Signature from "../assets/Signature.svg"
+import {Header} from "./header";
+
 export function Home() {
     return(
         <div className={'Home'}>
@@ -12,42 +16,18 @@ export function Home() {
                 <div className={'image'}>
                     <img src={HomeHeroImage}/>
                 </div>
-                <div className={'main'}>
-                    <div className={'login'}>
-                        <a ><p>Zaloguj</p></a>
-                        <a><p>Załóż konto</p></a>
+                <div className={'headerInfo'}>
+                    <Header/>
+                    <div>
+                        <h1>Zacznij pomagać!</h1>
+                        <h1>Oddaj niechciane rzeczy w zaufane ręce</h1>
                     </div>
-                    <nav>
-                        <ul>
-                            <li>
-                                Start
-                            </li>
-                            <li>
-                                O co chodzi?
-                            </li>
-                            <li>
-                                O nas
-                            </li>
-                            <li>
-                                Fundacja i organizacja
-                            </li>
-                            <li>
-                                Kontakt
-                            </li>
-                        </ul>
-                    </nav>
-                    <div className={'headerInfo'}>
-                        <div>
-                            <h1>Zacznij pomagać!</h1>
-                            <h1>Oddaj niechciane rzeczy w zaufane ręce</h1>
-                        </div>
-                        <div>
-                            <img src={Decoration} alt={'decoration'}/>
-                        </div>
-                        <div>
-                            <button>Oddaj rzeczy</button>
-                            <button>Zorganizuj zbiórkę</button>
-                        </div>
+                    <div>
+                        <img src={Decoration} alt={'decoration'}/>
+                    </div>
+                    <div>
+                        <button>Oddaj rzeczy</button>
+                        <button>Zorganizuj zbiórkę</button>
                     </div>
                 </div>
             </header>
@@ -110,7 +90,20 @@ export function Home() {
                 </div>
                 <button>ODDAJ RZECZY</button>
             </article>
-
+            <div className={'aboutUs'}>
+                <div className={'info'}>
+                    <h1>O nas</h1>
+                    <img src={Decoration}/>
+                    <p>
+                        Nori grape beet broccoli kambu beet greens fava bean potato quandong celery.
+                        Bunya nuts black-eyed pea praire tumip leek leniti tumrip greens parsnip.
+                    </p>
+                    <img src={Signature}/>
+                </div>
+                <div className={'imageAbout'}>
+                    <img src={People}/>
+                </div>
+            </div>
         </div>
     )
 }

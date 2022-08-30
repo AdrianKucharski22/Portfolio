@@ -1,0 +1,48 @@
+header{
+  display: flex;
+  flex-direction: row;
+  .headerInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+  .image {
+    width: 50%;
+    img {
+      width: 100%;
+      transform: translate(-35%);
+    }
+  }
+  .main{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    .login{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      a{
+        padding: 10px;
+        margin: 10px;
+        color: $dark-gray;
+      }
+      a:last-child{
+        border: $gold 2px solid;
+      }
+    }
+    nav{
+      height: 10%;
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+  }
+}

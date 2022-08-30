@@ -1,55 +1,7 @@
 .Home{
-  width: 99vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  header{
-    display: flex;
-    flex-direction: row;
-    .image {
-      width: 50%;
-      img {
-        width: 100%;
-        transform: translate(-35%);
-      }
-    }
-    .main{
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      .login{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        a{
-          padding: 10px;
-          margin: 10px;
-          color: $dark-gray;
-        }
-        a:last-child{
-           border: $gold 2px solid;
-         }
-      }
-      nav{
-        height: 10%;
-        ul {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
-      }
-      .headerInfo{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 85%;
-        text-align: center;
-      }
-    }
-  }
   button{
     width: 170px;
     height: 100px;
@@ -66,6 +18,7 @@
     justify-content: space-around;
     background-color: $gold;
     color: $dark-gray;
+    width: 100%;
     .bags, .organization, .rebounds{
       margin: 15px;
       h1{
@@ -104,6 +57,43 @@
       width: 100%;
       .chose {
         margin: 20px;
+        hr{
+          width: 50%;
+        }
+      }
+    }
+  }
+  .aboutUs{
+    display: flex;
+    flex-direction: row;
+    .info{
+      background-color: $light-gray;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 100px;
+      text-align: center;
+      width: 50%;
+      h1{
+        font-size: 20px;
+        margin: 20px;
+      }
+      img{
+        margin: 20px;
+      }
+      img:last-of-type{
+        transform: translate(100px);
+        height: 25%;
+      }
+    }
+    .imageAbout{
+      width: 50%;
+      background-color: $light-gray;
+      overflow: hidden;
+      img{
+        width: 100%;
+        transform: translate(10%);
       }
     }
   }
