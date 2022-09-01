@@ -1,7 +1,5 @@
 import {Link} from 'react-router-dom'
-import HomeHeroImage from "../assets/Home-Hero-Image.jpg";
-import Decoration from "../assets/Decoration.svg";
-import Login from "./Login";
+
 
 
 export function Header(){
@@ -10,19 +8,19 @@ export function Header(){
             <div className={'main'}>
                 <div className={'login'}>
                     <Link to={'/Login'} alt={'Login'}><p>Zaloguj</p></Link>
-                    <a><p>Załóż konto</p></a>
+                    <Link to={'/Register'} alt={'Register'}><p>Załóż konto</p></Link>
                 </div>
-                <nav>
+                <div className={'navInfo'}>
                     <ul>
                         <li>
                             Start
                         </li>
-                        <li>
+                        <a href={'#steps'}><li>
                             O co chodzi?
-                        </li>
-                        <li>
+                        </li></a>
+                        <a href={'#aboutUs'}><li>
                             O nas
-                        </li>
+                        </li></a>
                         <li>
                             Fundacja i organizacja
                         </li>
@@ -30,7 +28,7 @@ export function Header(){
                             Kontakt
                         </li>
                     </ul>
-                </nav>
+                </div>
 
             </div>
         </nav>

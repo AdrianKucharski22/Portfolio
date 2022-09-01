@@ -1,6 +1,6 @@
 import {Header} from "./header";
 import Decoration from "../assets/Decoration.svg"
-
+import '../scss/main.scss'
 function Login(){
     return(
         <div className={'Login'}>

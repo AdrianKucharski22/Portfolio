@@ -26,8 +26,8 @@ export function Home() {
                         <img src={Decoration} alt={'decoration'}/>
                     </div>
                     <div>
-                        <button>Oddaj rzeczy</button>
-                        <button>Zorganizuj zbiórkę</button>
+                        <Link to={'/Login'} alt={'Login'}><button>Oddaj rzeczy</button></Link>
+                        <Link to={'/Login'} alt={'Login'}><button>Zorganizuj zbiórkę</button></Link>
                     </div>
                 </div>
             </header>
@@ -88,7 +88,7 @@ export function Home() {
                         <p>Kurier przyjedzie w dogodnym terminie</p>
                     </div>
                 </div>
-                <button>ODDAJ RZECZY</button>
+                <Link to={'/Login'} alt={'Login'}><button>ODDAJ RZECZY</button></Link>
             </article>
             <div className={'aboutUs'}>
                 <div className={'info'}>
