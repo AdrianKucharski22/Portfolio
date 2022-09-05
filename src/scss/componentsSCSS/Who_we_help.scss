@@ -1,0 +1,59 @@
+.organization{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  h1{
+    font-size: 30px;
+  }
+  .who{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    .btn{
+      height: 90px;
+      display: flex;
+      margin: 20px;
+      button{
+        height: 70px;
+        font-size: 20px;
+        width: 250px;
+        border: unset;
+      }
+      button:nth-child(1){
+        height: 70px;
+        border: $light-gray 2px solid;
+      }
+    }
+  }
+  .organizationThinks{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    .organizationInfo{
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      border-bottom: $dark-gray 2px solid;
+    }
+    .organizationInfo:last-child{
+      border-bottom: unset;
+    }
+    .page{
+      display: flex;
+      margin: 20px;
+      p{
+        padding: 5px;
+        margin: 2px;
+      }
+      p:first-child{
+        border: $dark-gray 2px solid;
+      }
+    }
+  }
+}

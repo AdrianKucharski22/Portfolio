@@ -2,6 +2,7 @@ import {Link} from 'react-router-dom'
 
 
 
+
 export function Header(){
     return(
         <nav>
@@ -12,9 +13,9 @@ export function Header(){
                 </div>
                 <div className={'navInfo'}>
                     <ul>
-                        <li>
+                        <Link to={"/"}><li>
                             Start
-                        </li>
+                        </li></Link>
                         <a href={'#steps'}><li>
                             O co chodzi?
                         </li></a>

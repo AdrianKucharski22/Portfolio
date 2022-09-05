@@ -8,6 +8,7 @@ import Icon4 from "../assets/Icon-4.svg"
 import People from "../assets/People.jpg"
 import Signature from "../assets/Signature.svg"
 import {Header} from "./header";
+import Who_we_help from "./Who_we_help";
 
 export function Home() {
     return(
@@ -104,6 +105,7 @@ export function Home() {
                     <img src={People}/>
                 </div>
             </div>
+            <Who_we_help/>
         </div>
     )
 }
