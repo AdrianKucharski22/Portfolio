@@ -1,5 +1,5 @@
 import Decoration from "../assets/Decoration.svg"
-function Who_we_help(){
+function WhoWeHelp(){
     return(
         <section className={'organization'}>
             <div className="who">
@@ -51,4 +51,4 @@ function Who_we_help(){
         </section>
         )
 }
-export default Who_we_help;
+export default WhoWeHelp;

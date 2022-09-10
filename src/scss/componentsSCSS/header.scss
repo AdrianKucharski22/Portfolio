@@ -1,38 +1,24 @@
 header{
   display: flex;
   flex-direction: row;
-  .headerInfo{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  justify-content: flex-end;
   width: 100%;
-  text-align: center;
+  .headerInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    width: 50%;
+    position: relative;
+    right: 0;
 }
   .image {
-    width: 100%;
+    width: 50%;
+    left: 0;
     img {
       width: 100%;
       transform: translate(-35%);
-    }
-  }
-  .main{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    .login{
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      a{
-        padding: 10px;
-        margin: 10px;
-        color: $dark-gray;
-      }
-      a:last-child{
-        border: $gold 2px solid;
-      }
     }
   }
 }
@@ -48,8 +34,34 @@ nav{
    }
   .main{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .login{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      a{
+        text-decoration: none;
+        padding: 10px;
+        margin: 10px;
+        color: $dark-gray;
+      }
+      a:last-child{
+        border: $gold 2px solid;
+      }
+    }
+  }
   }
   .navInfo{
     margin-right: 20px;
+    a{
+      text-decoration: none;
+      color: $dark-gray;
+      padding: 10px;
+    }
+    a:first-child{
+      border: $dark-gray 1px solid;
+    }
   }
- }

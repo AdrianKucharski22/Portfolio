@@ -1,10 +1,10 @@
-import {Header} from "./header";
-import Decoration from "../assets/Decoration.svg"
+import Nav from "./Nav";
+import Decoration from "../assets/Decoration.svg";
 import '../scss/main.scss'
 function Login(){
     return(
         <div className={'Login'}>
-            <Header/>
+            <Nav/>
             <main>
                 <h1>Zaloguj się</h1>
                 <img src={Decoration}/>
@@ -15,6 +15,7 @@ function Login(){
                     <input type={"password"}/>
                 </form>
             </main>
+
         </div>
     );
 }
