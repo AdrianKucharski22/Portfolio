@@ -1,0 +1,34 @@
+.aboutUs{
+  display: flex;
+  flex-direction: row;
+  .info{
+    background-color: $light-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 100px;
+    text-align: center;
+    width: 50%;
+    h1{
+      font-size: 20px;
+      margin: 20px;
+    }
+    img{
+      margin: 20px;
+    }
+    img:last-of-type{
+      transform: translate(100px);
+      height: 25%;
+    }
+  }
+  .imageAbout{
+    width: 50%;
+    background-color: $light-gray;
+    overflow: hidden;
+    img{
+      width: 100%;
+      transform: translate(10%);
+    }
+  }
+}

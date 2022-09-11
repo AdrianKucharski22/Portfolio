@@ -3,8 +3,11 @@
 @import "settings/colors";
 @import "componentsSCSS/header";
 @import "componentsSCSS/Home";
+@import "componentsSCSS/ThreeColumns";
 @import "componentsSCSS/Who_we_help";
 @import "componentsSCSS/Footer";
+@import "componentsSCSS/AboutUs";
+@import "componentsSCSS/Steps";
 body{
   font-family: $font-base;
 }
