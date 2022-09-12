@@ -24,7 +24,7 @@ function scrolFundaction() {
     });
 }
 function scrolContact() {
-    const contact = document.querySelector('.contact');
+    const contact = document.querySelector('.copyright');
     contact.scrollIntoView({
         behavior: 'smooth',
         block: 'start',

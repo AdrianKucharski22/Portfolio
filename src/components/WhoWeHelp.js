@@ -16,7 +16,7 @@ function WhoWeHelp(){
                 </p>
             </div>
             <div className={'organizationThinks'}>
-                {/*<Fundactions/>*/}
+                <Fundactions/>
             </div>
         </section>
         )
