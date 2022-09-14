@@ -21,9 +21,8 @@
         width: 250px;
         border: unset;
       }
-      button:nth-child(1){
-        height: 70px;
-        border: $light-gray 2px solid;
+      .active {
+        border:  3px solid $dark-gray;
       }
     }
   }
@@ -35,7 +34,7 @@
     .organizationInfo{
       width: 50%;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       justify-content: space-between;
       padding: 20px;
@@ -43,17 +42,6 @@
     }
     .organizationInfo:last-child{
       border-bottom: unset;
-    }
-    .page{
-      display: flex;
-      margin: 20px;
-      p{
-        padding: 5px;
-        margin: 2px;
-      }
-      p:first-child{
-        border: $dark-gray 2px solid;
-      }
     }
   }
 }

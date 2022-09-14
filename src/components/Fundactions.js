@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 
 
-function Fundactions(){
+function Fundactions({data}){
     const functionsVariables =[
         {
             'id':1,
@@ -52,35 +52,41 @@ function Fundactions(){
             'Description':"Quis varius quam quisque id diam vel quam elementum polvinar",
             'Adres':"Egestas,sed,tempus",
         },
+        {
+            'id':9,
+            'Name':"Lorem Ipsum9",
+            'Description':"Quis varius quam quisque id diam vel quam elementum polvinar",
+            'Adres':"Egestas,sed,tempus",
+        },
 ]
-    const [fundaction, setFundaction] = useState(functionsVariables.slice(0, 3));
+    const [fundaction, setFundaction] = useState(functionsVariables);
     const [pageNumber,setPageNumber] = useState(0)
 
     const fundactionPerPage = 3
     const pagesVisited = pageNumber * fundactionPerPage
 
     const displayFundactions = fundaction
-        .slice(pagesVisited, pagesVisited+fundactionPerPage)
+        .slice(pagesVisited, pagesVisited + fundactionPerPage)
         .map((fundaction) => {
         return (
             <div className={'FundactionsWeHelp'}>
                 <h1>{fundaction.Name}</h1>
-                <h1>{fundaction.Description}</h1>
-                <h1>{fundaction.Adres}</h1>
+                <h3>{fundaction.Description}</h3>
+                <p>{fundaction.Adres}</p>
             </div>
         )
     })
 
     const pageCount = Math.ceil(fundaction.length / fundactionPerPage)
-    const changePage = (selected) =>{
+    const changePage = ({selected}) => {
         setPageNumber(selected);
-    }
+    };
     return(
         <div className={"organizationInfo"}>
             {displayFundactions}
             <ReactPaginate
-                previusLabel={"previous"}
-                nextLabel={"Next"}
+                previousLabel={""}
+                nextLabel={""}
                 pageCount={pageCount}
                 onPageChange={changePage}
                 containerClassName={'paginationBtn'}

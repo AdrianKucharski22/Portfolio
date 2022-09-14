@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 function scrolSteps() {
-    const steps = document.querySelector('.steps');
+    const steps = document.querySelector('.stepsName');
     steps.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
