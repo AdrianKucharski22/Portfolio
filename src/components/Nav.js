@@ -39,6 +39,7 @@ export default function Nav(){
                 <div className={'login'}>
                     <Link to={'/Login'} alt={'Login'}><p>Zaloguj</p></Link>
                     <Link to={'/Register'} alt={'Register'}><p>Załóż konto</p></Link>
+                    <Link to={'/Logout'} alt={'Logout'}><p>Wyloguj</p></Link>
                 </div>
                 <div className={'navInfo'}>
                     <ul>

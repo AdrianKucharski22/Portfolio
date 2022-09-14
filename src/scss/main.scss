@@ -12,5 +12,8 @@
 @import "componentsSCSS/Fundaction";
 body{
   font-family: $font-base;
+  h1{
+    font-size: 30px;
+  }
 }
 @import "reset.css";
