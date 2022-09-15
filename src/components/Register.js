@@ -8,7 +8,7 @@ function Register(){
             <Nav/>
             <article>
                 <h1>Zaloguj się</h1>
-                <img src={Decoration}/>
+                <img src={Decoration} alt={''}/>
                 <form>
                     <p>Email</p>
                     <input type={"email"}/>

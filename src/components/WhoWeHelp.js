@@ -3,7 +3,6 @@ import Decoration from "../assets/Decoration.svg"
 import Fundactions from "./Fundactions";
 import Organizations from "./Organizations";
 import Collections from "./Collection";
-import login from "./Login";
 function WhoWeHelp(){
 
     const [id, setID] = useState(1);

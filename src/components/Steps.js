@@ -14,25 +14,25 @@ function Steps() {
             </div>
             <div className={"steps"}>
                 <div className="chose">
-                    <img src={Icon1}/>
+                    <img src={Icon1} alt={''}/>
                     <h2>Wybierz rzeczy</h2>
                     <hr/>
                     <p>Ubrania, zabawki, sprzęt i inne</p>
                 </div>
                 <div className="chose">
-                    <img src={Icon2}/>
+                    <img src={Icon2} alt={''}/>
                     <h2>Spakuj je</h2>
                     <hr/>
                     <p>Skorzystaj z worków na śmieci</p>
                 </div>
                 <div className="chose">
-                    <img src={Icon3}/>
+                    <img src={Icon3} alt={''}/>
                     <h2>Zdecyduj komu chcesz pomóc</h2>
                     <hr/>
                     <p>Wybierz zaufane miejsce</p>
                 </div>
                 <div className="chose">
-                    <img src={Icon4}/>
+                    <img src={Icon4} alt={''}/>
                     <h2>Zamów kuriera</h2>
                     <hr/>
                     <p>Kurier przyjedzie w dogodnym terminie</p>

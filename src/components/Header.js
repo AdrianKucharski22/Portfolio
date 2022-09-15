@@ -6,7 +6,7 @@ function Header(){
     return(
         <header>
            <div className={'image'}>
-               <img src={HomeHeroImage}/>
+               <img src={HomeHeroImage} alt={''}/>
            </div>
            <div className={'headerInfo'}>
                <Nav/>
