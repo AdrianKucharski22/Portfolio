@@ -2,15 +2,35 @@ function Form(){
     function check(){
         const userName = document.querySelector('.userName')
         const nameError = document.querySelector('.nameError')
-        if (userName.value.length < 3){
+        const userEmail = document.querySelector('.userEmail')
+        const emailError = document.querySelector('.emailError')
+        const userMessage = document.querySelector('.userMessage')
+        const messageError = document.querySelector('.messageError')
+        if (userName.value.length < 3 || userName.value.includes(" ") === true || userName.value === ""){
             nameError.textContent = "imię musi być dłuższe niż 3 litery"
         }
         else{
             nameError.textContent = ""
         }
+        if (userEmail.value.includes('@') === false || userEmail.value === ""){
+            console.log("brak");
+            emailError.textContent = "brak znaków specjalnych"
+        }
+        else {
+            console.log('posiada')
+            emailError.textContent = ""
+        }
+        if (userMessage.value.length < 120 || userMessage.value === ""){
+            console.log('zamało liter')
+            messageError.textContent = "Wiadomośc powinna mieć conajmniej 120 znaków"
+        }
+        else{
+            console.log('odpowiednia długośc')
+            messageError.textContent = ""
+        }
     }
     return(
-        <form className={'myForm'} onChange={check}>
+        <form className={'myForm'} >
             <div className={"yourData"}>
                 <div className="name">
                     <p>Wpisz swoje imię</p>
@@ -28,7 +48,7 @@ function Form(){
                 <textarea placeholder={'Treść wiadomości'} className={'userMessage'}/>
                 <div className={'messageError error'}></div>
             </div>
-            <button>Wyślij</button>
+            <button onClick={check}>Wyślij</button>
         </form>
         )
 }

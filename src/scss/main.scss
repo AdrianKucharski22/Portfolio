@@ -15,5 +15,11 @@ body{
   h1{
     font-size: 30px;
   }
+  .error{
+    color: red;
+    flex-wrap: wrap;
+    font-size: 15px;
+    width: 181px;
+  }
 }
 @import "reset.css";
