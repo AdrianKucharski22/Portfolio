@@ -1,7 +1,10 @@
+import React, {useState} from "react";
 import Nav from "./Nav";
 import Decoration from "../assets/Decoration.svg";
 import '../scss/main.scss'
 import {Link} from "react-router-dom";
+import {auth} from "./fire";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signOut } from 'firebase/auth'
 function Register(){
     function check() {
         const email = document.querySelector('.email')
@@ -22,12 +25,25 @@ function Register(){
         }
         if (password2.value === password.value){
             password2Error.textContent=""
+            return register()
         }
         else {
             password2Error.textContent = " hasła nie są identyczne"
         }
-
+        return null;
     }
+
+    const [registerEmail, setRegisterEmail] = useState('')
+    const [registerPassword, setRegisterPassword] = useState('')
+    const register = async () =>{
+        try {
+            const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+            console.log(user)
+        }catch (error){
+            console.log(error.message);
+        }
+    }
+
     return(
         <div className={'Login'}>
             <Nav/>
@@ -36,13 +52,13 @@ function Register(){
                 <img src={Decoration} alt={''}/>
                 <form>
                     <p>Email</p>
-                    <input type={"email"} className={'email'}/>
+                    <input type={"email"} className={'email'} onChange={event => {setRegisterEmail(event.target.value)}}/>
                     <p className={'emailError error'}></p>
                     <p>Hasło</p>
                     <input type={"password"} className={'password'}/>
                     <p className={'passwordError error'}></p>
                     <p>Powtórz Hasło</p>
-                    <input type={"password"} className={'password2'}/>
+                    <input type={"password"} className={'password2'} onChange={event => {setRegisterPassword(event.target.value)}}/>
                     <p className={'password2Error error'}></p>
                 </form>
                 <div className={'buttons'}>

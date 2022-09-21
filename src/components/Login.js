@@ -2,64 +2,49 @@ import {Link} from "react-router-dom";
 import Nav from "./Nav";
 import Decoration from "../assets/Decoration.svg";
 import '../scss/main.scss'
-import React from "react";
+import React, {useState} from "react";
+import {auth} from "./fire";
+import {onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth'
 function Login(){
-    const [error,setError] = React.useState(null);
-    const [form, setForm] = React.useState({
-        email:'',
-        password:''
+    const [loginEmail, setLoginEmail] = useState('')
+    const [loginPassword, setLoginPassword] = useState('')
+    const [user, setUser] = useState({})
+    onAuthStateChanged(auth, (currentUser) =>{
+        setUser(currentUser)
     })
-    const handleSubmit = async (e) =>{
-        e.preventDefault()
-        const errorMsg = validate(form)
-        if (errorMsg){
-            setError(errorMsg)
-            console.log('błąd')
-            return
+    const login = async () =>{
+        try{
+            const user = await signInWithEmailAndPassword(
+                auth,
+                loginEmail,
+                loginPassword
+            )
+            console.log(user)
         }
-        console.log('formSubmited',form)
-    }
-    const updateField = e =>{
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value
-        })
-    }
-    const validate = form =>{
-        if (!form.email){
-            return 'Email jest wymagany'
-        }
-        else if (! /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i.test(form.email)){
-            return 'Zły e-mail'
+        catch (error){
+            console.log(error.message)
         }
 
-        if (!form.password){
-            return "Hasło jest wymagane"
-        }
-        else if (form.password.length < 6){
-            return "hasło musi być dłuższe niż 6 liter"
-        }
-
-        return null
     }
-    // function check(){
-    //     const email = document.querySelector('.email')
-    //     const emailError = document.querySelector('.emailError')
-    //     const password = document.querySelector('.password')
-    //     const passwordError = document.querySelector('.passwordError')
-    //     if (email.value.includes('@') === false || email.value.includes(' ') === true){
-    //         emailError.textContent="błędny email"
-    //     }
-    //     else {
-    //         emailError.textContent=""
-    //     }
-    //     if (password.value.length < 6){
-    //         passwordError.textContent = "Hasło musi mieć conajmniej 6 znakow"
-    //     }
-    //     else {
-    //         passwordError.textContent = ""
-    //     }
-    // }
+    function check(){
+        const email = document.querySelector('.email')
+        const emailError = document.querySelector('.emailError')
+        const password = document.querySelector('.password')
+        const passwordError = document.querySelector('.passwordError')
+        if (email.value.includes('@') === false || email.value.includes(' ') === true){
+            emailError.textContent="Błędny email"
+        }
+        else {
+            emailError.textContent=""
+        }
+        if (password.value.length < 6){
+            passwordError.textContent = "Hasło musi mieć conajmniej 6 znakow"
+        }
+        else {
+            passwordError.textContent = ""
+            return login()
+        }
+    }
     return(
         <div className={'Login'}>
             <Nav/>
@@ -67,17 +52,16 @@ function Login(){
                 <h1>Zaloguj się</h1>
                 <img src={Decoration} alt={''}/>
                 <form>
-                    <p className={'error'}>{error}</p>
                     <p>Email</p>
-                    <input type={"email"} className={'email'} id='email' name='email' onChange={updateField}/>
+                    <input type={"email"} className={'email'} id='email' name='email' onChange={event => {setLoginEmail(event.target.value)}}/>
                     <p className={'emailError error'}></p>
                     <p>Hasło</p>
-                    <input type={"password"} className={'password'} id='password' name='password' onChange={updateField}/>
+                    <input type={"password"} className={'password'} id='password' name='password' onChange={event => {setLoginPassword(event.target.value)}}/>
                     <p className={'passwordError error'}></p>
                 </form>
                 <div className={'buttons'}>
                     <button><Link to={'/Register'} alt={'Register'}>Załóż konto</Link></button>
-                    <button onClick={handleSubmit}>Zaloguj się</button>
+                    <button onClick={check}>Zaloguj się</button>
                 </div>
             </article>
 
