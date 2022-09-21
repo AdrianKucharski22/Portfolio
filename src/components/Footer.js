@@ -12,12 +12,12 @@ function Footer(){
                     <Form/>
                 </div>
                 <div className="copyright">
-                <p>Copyright by Coders Lab</p>
+                <p>Copyright by CodersLab</p>
                     <div className="icons">
                         <img src={ig} alt={''}/>
                         <img src={fb} alt={''}/>
                     </div>
-            </div>
+                </div>
             </footer>
     );
 }

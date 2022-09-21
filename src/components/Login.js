@@ -13,6 +13,8 @@ function Login(){
         setUser(currentUser)
     })
     const login = async () =>{
+        const mainError = document.querySelector('.mainError')
+        const passwordError = document.querySelector('.passwordError')
         try{
             const user = await signInWithEmailAndPassword(
                 auth,
@@ -22,7 +24,19 @@ function Login(){
             console.log(user)
         }
         catch (error){
-            console.log(error.message)
+
+            if (error.code === 'auth/user-not-found'){
+                console.log('Nie ma takiego użytkownika')
+                mainError.textContent = 'Nie ma takiego użytkownika'
+            }
+            else if (error.code === 'auth/wrong-password'){
+                console.log('złe hasło')
+                passwordError.textContent = "Błędne hasło"
+
+            }
+            else {
+                console.log(error.message)
+            }
         }
 
     }
@@ -52,6 +66,7 @@ function Login(){
                 <h1>Zaloguj się</h1>
                 <img src={Decoration} alt={''}/>
                 <form>
+                    <h4 className={'mainError error'}></h4>
                     <p>Email</p>
                     <input type={"email"} className={'email'} id='email' name='email' onChange={event => {setLoginEmail(event.target.value)}}/>
                     <p className={'emailError error'}></p>

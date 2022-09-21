@@ -3,6 +3,7 @@ import {Home} from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
+import GiveThinks from "./components/GiveThinks";
 function App() {
   return (
       <BrowserRouter>
@@ -11,6 +12,7 @@ function App() {
             <Route path={"/login"} exact element={<Login/>} />
             <Route path={"/register"} exact element={<Register/>} />
             <Route path={"/logout"} exact element={<Logout/>}/>
+            <Route path={"/GiveThinks"} exact element={<GiveThinks/>}/>
         </Routes>
       </BrowserRouter>
   );
