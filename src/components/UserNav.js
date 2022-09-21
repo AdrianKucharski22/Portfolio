@@ -15,7 +15,7 @@ export default function UserNav(){
     return(
         <div className={'login'}>
             <h4>{user?.email}</h4>
-            <Link to={'/Login'} alt={'Login'}><p>Oddaj</p></Link>
+            <Link to={'/GiveThinks'} alt={'GiveThinks'}><p>Oddaj</p></Link>
             <Link to={'/Logout'} alt={'Logout'} onClick={logout}><p>Wyloguj</p></Link>
         </div>
     )}

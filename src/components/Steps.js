@@ -4,8 +4,26 @@ import Icon2 from "../assets/Icon-2.svg";
 import Icon3 from "../assets/Icon-3.svg";
 import Icon4 from "../assets/Icon-4.svg";
 import {Link} from "react-router-dom";
+import {useState} from "react";
+import {onAuthStateChanged} from "firebase/auth";
+import {auth} from "./fire";
 
 function Steps() {
+    function Buttons(){
+        const [user, setUser] = useState({})
+        onAuthStateChanged(auth, (currentUser) =>{
+            setUser(currentUser)
+        })
+        if (user?.email){
+            return(
+                <Link to={'/GiveThinks'} alt={'GiveThinks'}><button>ODDAJ RZECZY</button></Link>
+            )}
+        else{
+            return(
+                <Link to={'/Login'} alt={'Login'}><button>ODDAJ RZECZY</button></Link>
+            )
+        }
+    }
     return (
         <article>
             <div className={'stepsName'}>
@@ -38,7 +56,7 @@ function Steps() {
                     <p>Kurier przyjedzie w dogodnym terminie</p>
                 </div>
             </div>
-            <Link to={'/Login'} alt={'Login'}><button>ODDAJ RZECZY</button></Link>
+            <Buttons/>
         </article>
     );
 }
