@@ -3,6 +3,9 @@
   border-bottom: $dark-gray 2px solid;
   width: 100%;
 }
+.FundactionsWeHelp:last-of-type{
+  border-bottom: unset;
+}
 .paginationBtn{
   display: flex;
   flex-direction: row;

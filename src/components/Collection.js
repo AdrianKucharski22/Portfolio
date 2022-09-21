@@ -87,8 +87,6 @@ function Collections(){
             <ReactPaginate
                 previousLabel={""}
                 nextLabel={""}
-                pageCount={pageCount}
-                onPageChange={changePage}
                 containerClassName={'paginationBtn'}
                 previousLinkClassName={'previousBtn'}
                 nextLinkClassName={'nextBtn'}
