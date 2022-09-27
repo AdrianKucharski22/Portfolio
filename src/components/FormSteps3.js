@@ -1,7 +1,7 @@
 import GiveThinksorange from "./GiveThinksorange";
 import {useState} from "react";
 
-function FormSteps3(){
+function FormSteps3(data,setData){
     const localizationOptions = [
         {
             value:'-wybierz-',
@@ -29,6 +29,21 @@ function FormSteps3(){
         },
     ]
     const [localizationSelect,setLocalizationSelect] = useState('.')
+    const [toWhoCheck,setToWhoChecked] = useState('')
+    const toWho_array = [...toWhoCheck]
+    const checkHandler = (thinks) =>{
+        if (toWho_array.includes(thinks) === true){
+                toWho_array.splice(toWho_array.indexOf(thinks),1)
+                console.log(toWho_array)
+        }
+        else {
+            toWho_array.push(thinks);
+            console.log(toWho_array)
+        }
+    }
+
+
+
     return(
         <div className={'formStep'}>
             <GiveThinksorange/>
@@ -45,27 +60,62 @@ function FormSteps3(){
                             <option value={localizationOption.value}>{localizationOption.text}</option>
                             )))}
                 </select>
+                {localizationSelect}
             </div>
             <h1>Komu chcesz pomóc?</h1>
             <div className={'checkboxes'}>
                 <label className={'containerBox'}>
-                    <input type={"checkbox"} name={'helpGroups'}/><p>dzieciom</p>
+                    <input
+                        type={"checkbox"}
+                        name={'helpGroups'}
+                        value={'dzieciom'}
+                    />
+                    <p
+                        onClick={() =>checkHandler('dzieciom')}>
+                        dzieciom
+                    </p>
                     <span className={'checkmarkBox'}/>
                 </label>
                 <label className={'containerBox'}>
-                    <input type={"checkbox"} name={'helpGroups'}/><p>samotnym matkom</p>
+                    <input
+                        type={"checkbox"}
+                        name={'helpGroups'}
+                        value={'samotnym matkom'}
+                    />
+                    <p
+                        onClick={() =>checkHandler('samotnym matkom')}>
+                        samotnym matkom
+                    </p>
                     <span className={'checkmarkBox'}/>
                 </label>
                 <label className={'containerBox'}>
-                    <input type={"checkbox"} name={'helpGroups'}/><p>bezdomnym</p>
+                    <input
+                        type={"checkbox"}
+                        name={'helpGroups'}
+                        value={'bezdomnym'}
+                    />
+                    <p
+                        onClick={() =>checkHandler('bezdomnym')}>
+                        bezdomnym
+                    </p>
+                    <span
+                        className={'checkmarkBox'}
+                    />
+                </label>
+
+                <label className={'containerBox'}>
+                    <input type={"checkbox"} name={'helpGroups'}/>
+                    <p onClick={() =>checkHandler('niepełnosprawnym')}>
+                        niepełnosprawnym
+                    </p>
                     <span className={'checkmarkBox'}/>
                 </label>
+
                 <label className={'containerBox'}>
-                    <input type={"checkbox"} name={'helpGroups'}/><p>niepełnosprawnym</p>
-                    <span className={'checkmarkBox'}/>
-                </label>
-                <label className={'containerBox'}>
-                    <input type={"checkbox"} name={'helpGroups'}/><p>osobom starszym</p>
+                    <input type={"checkbox"} name={'helpGroups'}/>
+                    <p onClick={() =>checkHandler('osobom starszym')}>
+                        osobom starszym
+                    </p>
                     <span className={'checkmarkBox'}/>
                 </label>
             </div>
