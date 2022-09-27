@@ -1,47 +1,77 @@
 import GiveThinksorange from "./GiveThinksorange";
+import {useState} from "react";
 
 function FormSteps3(){
+    const localizationOptions = [
+        {
+            value:'-wybierz-',
+            text:'-wybierz-',
+        },
+        {
+            value:'Poznań',
+            text:'Poznań',
+        },
+        {
+            value:'Warszawa',
+            text:'Warszawa',
+        },
+        {
+            value:'Kraków',
+            text:'Kraków',
+        },
+        {
+            value:'Wrocław',
+            text:'Wrocław',
+        },
+        {
+            value:'Katowice',
+            text:'Katowice',
+        },
+    ]
+    const [localizationSelect,setLocalizationSelect] = useState('.')
     return(
         <div className={'formStep'}>
             <GiveThinksorange/>
         <div className={'formSteps'}>
             <div>
-            <p>Krok 3/4</p>
-            <h1>Lokalizacja</h1>
-            <select name="localization" id="localization">
-                <option value="-">-wybierz-</option>
-                <option value="Poznań">Poznań</option>
-                <option value="Warszawa">Warszawa</option>
-                <option value="Kraków">Kraków</option>
-                <option value="Wrocław">Wrocław</option>
-                <option value="Katowice">Katowice</option>
-            </select>
+                <p>Krok 3/4</p>
+                <h1>Lokalizacja</h1>
+                <select
+                    name="localization"
+                    id="localization"
+                    className={'localization'}
+                    onChange={e => setLocalizationSelect(e.target.value)}>
+                        {localizationOptions.map((localizationOption =>(
+                            <option value={localizationOption.value}>{localizationOption.text}</option>
+                            )))}
+                </select>
             </div>
-            <div>
             <h1>Komu chcesz pomóc?</h1>
-            <label>
-            <input type={"checkbox"} name={'helpGroups'}/>dzieciom
-            </label>
-            <label>
-                <input type={"checkbox"} name={'helpGroups'}/>samotnym matkom
-            </label>
-            <label>
-                <input type={"checkbox"} name={'helpGroups'}/>bezdomnym
-            </label>
-            <label>
-                <input type={"checkbox"} name={'helpGroups'}/>niepełnosprawnym
-            </label>
-            <label>
-                <input type={"checkbox"} name={'helpGroups'}/>osobom starszym
-            </label>
+            <div className={'checkboxes'}>
+                <label className={'containerBox'}>
+                    <input type={"checkbox"} name={'helpGroups'}/><p>dzieciom</p>
+                    <span className={'checkmarkBox'}/>
+                </label>
+                <label className={'containerBox'}>
+                    <input type={"checkbox"} name={'helpGroups'}/><p>samotnym matkom</p>
+                    <span className={'checkmarkBox'}/>
+                </label>
+                <label className={'containerBox'}>
+                    <input type={"checkbox"} name={'helpGroups'}/><p>bezdomnym</p>
+                    <span className={'checkmarkBox'}/>
+                </label>
+                <label className={'containerBox'}>
+                    <input type={"checkbox"} name={'helpGroups'}/><p>niepełnosprawnym</p>
+                    <span className={'checkmarkBox'}/>
+                </label>
+                <label className={'containerBox'}>
+                    <input type={"checkbox"} name={'helpGroups'}/><p>osobom starszym</p>
+                    <span className={'checkmarkBox'}/>
+                </label>
             </div>
-            <div>
-            <h3>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h3>
-            <input type={'text'}/>
-            </div>
-            <div>
-            <button>Wstecz</button>
-            <button>Dalej</button>
+            <div className={'optionalName'}>
+                <h3>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h3>
+                <input type={'text'} className={'organizationName'}/>
             </div>
         </div>
         </div>

@@ -1,5 +1,37 @@
+header{
+  height: 700px;
+}
+.stepText{
+  margin: 20px;
+}
+.stepsInfo{
+  display: flex;
+  .stepsSquare{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin-bottom: 40px;
+    padding: 40px;
+    &:before {
+      content: '';
+      position:absolute;
+      width:130px;
+      height:130px;
+      border-color: $dark-gray;
+      border-style:solid;
+      border-width:1px;
+      transform: rotate(-45deg)translate(-7px, -30px);
+    }
+  }
+}
 .formStep{
   width: 100%;
+  background-image: url("../../assets/Background-Form.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   .important {
     background-color: $gold;
     width: 100%;
@@ -15,14 +47,16 @@
     }
   }
   .formSteps {
-    background-image: url("../../assets/Background-Form.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-left: 60px;
-    height: 590px;
+    height: 790px;
+    .localization{
+      width: 250px;
+      height: 25px;
+    }
     p{
       color: $light-gray;
       margin-top: 40px;
@@ -32,20 +66,19 @@
       text-align: left;
       margin: 60px 0 20px 0;
     }
-    .container {
+    .labelDiv {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      .container {
         height: 30px;
-        font-size: 20px;
-        margin: 20px 0 20px 0;
+        font-size: 22px;
+        margin: 20px 12px 20px 0;
         display: block;
         position: relative;
         padding-left: 35px;
-        margin-bottom: 12px;
         cursor: pointer;
-        font-size: 22px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+        width: 0;
       }
 
       /* Hide the browser's default radio button */
@@ -87,12 +120,131 @@
       .container input:checked ~ .checkmark:after {
         display: block;
       }
+    }
     button{
       width: 150px;
       height: 60px;
+      background-color: transparent;
+      border: $dark-gray 1px solid;
     }
     .bags{
       width: 200px;
     }
+    .checkboxes{
+      display: flex;
+      flex-direction: column;
+      height: 150px;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      /* Customize the label (the container) */
+      .containerBox {
+        display: block;
+        width: 250px;
+        position: relative;
+        padding-left: 5px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      /* Hide the browser's default checkbox */
+      .containerBox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      /* Create a custom checkbox */
+      p {
+        position: relative;
+        color: black;
+        text-align: center;
+        border: black 1px solid;
+        margin: 0;
+        padding: 10px;
+        background-color: #eee;
+
+      }
+
+      /* On mouse-over, add a grey background color */
+      .containerBox:hover input ~ p {
+        background-color: #ccc;
+      }
+
+      /* When the checkbox is checked, add a blue background */
+      .containerBox input:checked ~ p {
+        background-color: $gold;
+      }
+    }
+  }
+  .optionalName {
+    h3{
+      font-size: 20px;
+    }
+    .organizationName {
+      margin-top: 10px;
+      width: 450px;
+      height: 20px;
+      background-color: transparent;
+    }
+  }
+  .userAdres{
+    display: flex;
+    width: 75%;
+    .userAdresForm{
+      width: 50%;
+      .adresForm{
+        display: flex;
+        flex-direction: row;
+        .namesOfForm{
+          width: 25%;
+          p{
+            margin: 35px 0 40px 0;
+          }
+        }
+        .inputsOfForm{
+          width: 25%;
+          input{
+            margin: 20px 0 20px 0;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    .dataAndInputs{
+      width: 50%;
+      .dataForm{
+        display: flex;
+        .namesOfForm{
+          width: 25%;
+        }
+        .inputsOfForm{
+          width: 25%;
+        input , textarea{
+          margin: 35px 0 0 0;
+          width: 150px;
+          background-color: $main-background;
+          resize: none;
+        }
+          textarea{
+            resize: none;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+  .summary{
+    display: flex;
+    justify-content: space-around;
+  }
+  .summaryAdres , .summaryData{
+    display: flex;
   }
 }
