@@ -1,7 +1,7 @@
 import GiveThinksorange from "./GiveThinksorange";
-import {useState} from "react";
-
-function FormSteps3(data,setData){
+import {useEffect, useState} from "react";
+import React from "react";
+function FormSteps3() {
     const localizationOptions = [
         {
             value:'-wybierz-',
@@ -30,19 +30,34 @@ function FormSteps3(data,setData){
     ]
     const [localizationSelect,setLocalizationSelect] = useState('.')
     const [toWhoCheck,setToWhoChecked] = useState('')
+
     const toWho_array = [...toWhoCheck]
-    const checkHandler = (thinks) =>{
-        if (toWho_array.includes(thinks) === true){
+    const checkHandler = (thinks) => {
+        if (toWho_array.includes(thinks)) {
                 toWho_array.splice(toWho_array.indexOf(thinks),1)
                 console.log(toWho_array)
         }
         else {
-            toWho_array.push(thinks);
+            toWho_array.push(thinks)
             console.log(toWho_array)
         }
+        localStorage.setItem('toWho',JSON.stringify(toWho_array))
     }
 
+    const [organizationName, setOrganizationName] = React.useState({
+        organizationName:""
+    })
+    const checkOrganization = (organization) => {
+        setOrganizationName({
+        ...organizationName,
+          [organization.target.name]: organization.target.value
+        })
+        localStorage.setItem('organizationName',JSON.stringify(organizationName))
+    }
 
+    useEffect(() => {
+        localStorage.setItem('localization',JSON.stringify(localizationSelect))
+    }, );
 
     return(
         <div className={'formStep'}>
@@ -68,10 +83,10 @@ function FormSteps3(data,setData){
                     <input
                         type={"checkbox"}
                         name={'helpGroups'}
-                        value={'dzieciom'}
+                        value={' dzieciom '}
                     />
                     <p
-                        onClick={() =>checkHandler('dzieciom')}>
+                        onClick={() =>checkHandler(' dzieciom ')}>
                         dzieciom
                     </p>
                     <span className={'checkmarkBox'}/>
@@ -80,10 +95,10 @@ function FormSteps3(data,setData){
                     <input
                         type={"checkbox"}
                         name={'helpGroups'}
-                        value={'samotnym matkom'}
+                        value={' samotnym matkom '}
                     />
                     <p
-                        onClick={() =>checkHandler('samotnym matkom')}>
+                        onClick={() =>checkHandler(' samotnym matkom ')}>
                         samotnym matkom
                     </p>
                     <span className={'checkmarkBox'}/>
@@ -92,20 +107,19 @@ function FormSteps3(data,setData){
                     <input
                         type={"checkbox"}
                         name={'helpGroups'}
-                        value={'bezdomnym'}
+                        value={' bezdomnym '}
                     />
                     <p
-                        onClick={() =>checkHandler('bezdomnym')}>
+                        onClick={() => checkHandler(' bezdomnym ')}>
                         bezdomnym
                     </p>
                     <span
                         className={'checkmarkBox'}
                     />
                 </label>
-
                 <label className={'containerBox'}>
                     <input type={"checkbox"} name={'helpGroups'}/>
-                    <p onClick={() =>checkHandler('niepełnosprawnym')}>
+                    <p onClick={() => checkHandler(' niepełnosprawnym ')}>
                         niepełnosprawnym
                     </p>
                     <span className={'checkmarkBox'}/>
@@ -113,7 +127,7 @@ function FormSteps3(data,setData){
 
                 <label className={'containerBox'}>
                     <input type={"checkbox"} name={'helpGroups'}/>
-                    <p onClick={() =>checkHandler('osobom starszym')}>
+                    <p onClick={() => checkHandler(' osobom starszym ')}>
                         osobom starszym
                     </p>
                     <span className={'checkmarkBox'}/>
@@ -121,7 +135,7 @@ function FormSteps3(data,setData){
             </div>
             <div className={'optionalName'}>
                 <h3>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h3>
-                <input type={'text'} className={'organizationName'}/>
+                <input type={'text'} className={'organizationName'} id={'organizationName'} name={'organizationName'} onChange={checkOrganization}/>
             </div>
         </div>
         </div>

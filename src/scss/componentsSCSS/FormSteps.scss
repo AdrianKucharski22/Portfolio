@@ -59,7 +59,7 @@ header{
     }
     p{
       color: $light-gray;
-      margin-top: 40px;
+      margin: 40px 10px 0 0;
     }
     h1{
       height: 60px;
@@ -243,6 +243,11 @@ header{
   .summary{
     display: flex;
     justify-content: space-around;
+    width: 75%;
+  }
+  .summaryLocalization, .summaryBags{
+    display: flex;
+    align-items: center;
   }
   .summaryAdres , .summaryData{
     display: flex;

@@ -1,7 +1,7 @@
 import GiveThinksorange from "./GiveThinksorange";
 import {useEffect, useState} from "react";
 
-function FormSteps2({data,setData}){
+function FormSteps2() {
     const howManyBags = [
         {
             key:0,
@@ -33,7 +33,11 @@ function FormSteps2({data,setData}){
             text:'5',
             value:5,
         }
-]
+    ]
+    useEffect(() => {
+        localStorage.setItem('amount',JSON.stringify(selectedValue))
+    }, );
+
     const [selectedValue, setSelectedValue] = useState(".");
     return(
         <div className={'formStep'}>
@@ -44,10 +48,17 @@ function FormSteps2({data,setData}){
             <h1>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h1>
             <label>
                 Liczba 60l worków :
-                <select name="bags" id="bags" className={'bags'} onChange={(e) => setSelectedValue(e.target.value)} >
-                    {howManyBags.map((howManyBag) =>(
-                        <option value = {howManyBag.value} key={howManyBag.key}>{howManyBag.text}</option>
-                        ))}
+                <select
+                    name="bags"
+                    id="bags"
+                    className={'bags'}
+                    onChange={(e) => setSelectedValue(e.target.value)}
+                >
+                    {
+                        howManyBags.map((howManyBag) => (
+                            <option value = {howManyBag.value} key = {howManyBag.key}>{howManyBag.text}</option>
+                        ))
+                    }
                 </select>
             </label>
             </div>

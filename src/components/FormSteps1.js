@@ -14,9 +14,7 @@ function FormSteps1({data, setData}){
         })
     }
     useEffect(() => {
-        console.log(actualValue);
-        console.log(data.donation);
-        console.log(actualValue === data.donation);
+        localStorage.setItem('item',JSON.stringify(data.donation))
     }, [data.donation]);
 
     return(
