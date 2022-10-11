@@ -14,9 +14,7 @@ function FormSteps1({data, setData}){
         })
     }
     useEffect(() => {
-        console.log(actualValue);
-        console.log(data.donation);
-        console.log(actualValue === data.donation);
+        localStorage.setItem('item',JSON.stringify(data.donation))
     }, [data.donation]);
 
     return(
@@ -38,10 +36,9 @@ function FormSteps1({data, setData}){
                             value={'ubrania'}
                             checked={actualValue === data.donation}
                         />
-
                         <span
                             className={'checkmark'}
-                            onClick={() => inputHandler("ubrania")}
+                            onClick={() => inputHandler("ubrania które nadają się do ponownego użycia")}
                         />
                     </label>
                         ubrania które nadają się do ponownego użycia
@@ -54,13 +51,12 @@ function FormSteps1({data, setData}){
                             type={"radio"}
                             className={'radio1'}
                             name={'what'}
-                            value={'2'}
+                            value={'ubrania,do wyrzucenia'}
                             checked={actualValue === data.donation}
                         />
-
                         <span
                             className={'checkmark'}
-                            onClick={() => inputHandler("2")}
+                            onClick={() => inputHandler("ubrania,do wyrzucenia")}
                         />
                     </label>
                         ubrania,do wyrzucenia
@@ -73,13 +69,12 @@ function FormSteps1({data, setData}){
                             type={"radio"}
                             className={'radio2'}
                             name={'what'}
-                            value={'3'}
+                            value={'zabawki'}
                             checked={actualValue === data.donation}
                         />
-
                         <span
                             className={'checkmark'}
-                            onClick={() => inputHandler("3")}
+                            onClick={() => inputHandler("zabawki")}
                         />
                     </label>
                         zabawki
@@ -92,13 +87,12 @@ function FormSteps1({data, setData}){
                             type={"radio"}
                             className={'radio3'}
                             name={'what'}
-                            value={'4'}
+                            value={'książki'}
                             checked={actualValue === data.donation}
                         />
-
                         <span
                             className={'checkmark'}
-                            onClick={() => inputHandler("4")}
+                            onClick={() => inputHandler("książki")}
                         />
                     </label>
                         książki
@@ -111,12 +105,12 @@ function FormSteps1({data, setData}){
                             type={"radio"}
                             className={'radio5'}
                             name={'what'}
-                            value={'5'}
+                            value={'inne'}
                             checked={actualValue === data.donation}
                         />
                         <span
                             className={'checkmark'}
-                            onClick={() => inputHandler("5")}
+                            onClick={() => inputHandler("inne")}
                         />
                     </label>
                         inne

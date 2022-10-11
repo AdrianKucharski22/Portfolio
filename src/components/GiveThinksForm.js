@@ -7,25 +7,24 @@ import FormStepsSummary from "./FormStepsSummary";
 import FormStepsEnd from "./FormStepsEnd";
 
 const GiveThinksForm = () => {
-    const [id, setId] = useState(0);
-    const [data, setData] = useState({});
+    const [id, setId] = useState(0)
+    const [data, setData] = useState({})
     const handleButton = () => {
-        setId(prevState => prevState + 1);
+        setId(prevState => prevState + 1)
     }
-    const backHandleButton = () =>{
-        setId(prevState => prevState - 1);
+    const backHandleButton = () => {
+        setId(prevState => prevState - 1)
     }
-    const returnComponent = (id) =>{
-        if(id === 0){
+    const returnComponent = (id) => {
+        if (id === 0) {
             return(
                 <div className={'formStep'}>
                     <FormSteps1 data={data} setData={setData}/>
                     <button onClick={() => handleButton()}>Dalej</button>
-
                 </div>
             )
         }
-        else if (id === 1){
+        else if (id === 1) {
             return (
                 <div className={'formStep'}>
                     <FormSteps2/>
@@ -34,7 +33,7 @@ const GiveThinksForm = () => {
                 </div>
             )
         }
-        else if (id === 2){
+        else if (id === 2) {
             return(
                 <div className={'formStep'}>
                     <FormSteps3/>
@@ -43,7 +42,7 @@ const GiveThinksForm = () => {
                 </div>
             )
         }
-        else if (id === 3){
+        else if (id === 3) {
             return (
                 <div className={'formStep'}>
                     <FormSteps4/>
@@ -52,7 +51,7 @@ const GiveThinksForm = () => {
                 </div>
             )
         }
-        else if( id===4 ){
+        else if ( id===4 ) {
             console.log(id)
             return (
             <div className={'formStep'}>
