@@ -48,7 +48,7 @@ export default function Nav(){
                 <UserNav/>
                 <div className={'navInfo'}>
                     <ul>
-                        <Link to={"/"}><li>
+                        <Link to={"/portfolio"}><li>
                             Start
                         </li></Link>
                         <a href={'#steps'} onClick={scrolSteps}><li>
