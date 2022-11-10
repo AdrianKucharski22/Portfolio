@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.c0edf71b.css",
+    "main.css": "/portfolio/static/css/main.3b80de6b.css",
     "main.js": "/portfolio/static/js/main.08a3cb84.js",
     "static/media/Background-Contact-Form.jpg": "/portfolio/static/media/Background-Contact-Form.655c54427d3b66427460.jpg",
     "static/media/Form-Hero-Image.jpg": "/portfolio/static/media/Form-Hero-Image.75cd77265f1736b72327.jpg",
@@ -16,11 +16,11 @@
     "static/media/Signature.svg": "/portfolio/static/media/Signature.8f2a001d56e8f7d883e166ac3cc69892.svg",
     "static/media/Decoration.svg": "/portfolio/static/media/Decoration.aad75271e33dd889f25b0e24a5e6c0b2.svg",
     "index.html": "/portfolio/index.html",
-    "main.c0edf71b.css.map": "/portfolio/static/css/main.c0edf71b.css.map",
+    "main.3b80de6b.css.map": "/portfolio/static/css/main.3b80de6b.css.map",
     "main.08a3cb84.js.map": "/portfolio/static/js/main.08a3cb84.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0edf71b.css",
+    "static/css/main.3b80de6b.css",
     "static/js/main.08a3cb84.js"
   ]
 }
