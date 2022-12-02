@@ -13,15 +13,30 @@ header{
     position: relative;
     right: 0;
 }
+@media (max-width:1000px) {
+  .headerInfo{
+    width: 100%;
+  }
+}
   .image {
     width: 50%;
     left: 0;
     img {
-      width: 100%;
+      width: 102vh;
       transform: translate(-35%);
     }
+    
+  }
+  @media (max-width:1000px) {
+    .image{
+      width: 0px;
+     img{
+        width: 0px;
+    } 
+  }
   }
 }
+  
 nav{
   width: 100%;
   display: flex;

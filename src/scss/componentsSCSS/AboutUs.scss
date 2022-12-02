@@ -32,3 +32,14 @@
     }
   }
 }
+
+@media (max-width:500px) {
+  .aboutUs{
+  .imageAbout{
+    width: 0px;
+    img{
+      width: 0px;
+    }
+  }
+}
+}

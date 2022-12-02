@@ -21,4 +21,10 @@ main{
       line-height: 20px;
     }
   }
+  
+}
+@media (max-width:1000px) {
+  main{
+      flex-direction: column;
+  } 
 }

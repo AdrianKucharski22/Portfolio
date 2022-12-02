@@ -18,7 +18,7 @@ export default function  FormStepsSummary(){
             <div className={'summaryLocalization'}>
                 <img src={icon4} alt={'icon4'}/>dla lokalizacji:
                 {JSON.parse(localStorage.getItem('localization'))}
-                , {opcjonalOrganizatioNname.organizationName}
+                , {opcjonalOrganizatioNname?.organizationName}
             </div>
             <div className={'summary'}>
                 <div>

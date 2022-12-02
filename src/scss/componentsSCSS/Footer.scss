@@ -6,7 +6,6 @@ footer{
   align-content: flex-end;
   align-items: flex-end;
   .form{
-    width: 50%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -35,6 +34,9 @@ footer{
           background: none;
           border: none;
           border-bottom: $dark-gray 1px solid;
+          @media (max-width:500px) {
+            width: 75%;
+          }
         }
       }
       button{
@@ -42,6 +44,18 @@ footer{
         width: 100px;
         font-size: unset;
         border: $dark-gray 1px solid;
+      }
+    }
+    @media (max-width:500px) {
+      form{
+        .yourData{
+          flex-direction: column;
+        }
+      }
+      .message{
+        textarea{
+          width: 75%;
+        }
       }
     }
   }
